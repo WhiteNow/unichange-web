@@ -1,13 +1,6 @@
 import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
-import Convenio from "./../Convenio";
-
-let reguladores = [
-  "SUNEDU",
-  "SUNEDU1",
-  "SUNEDU2",
-  "SUNEDU3",
-]
+import Convenio from "../Convenio";
 
 const NavigationNavBar = () => {
   return (
