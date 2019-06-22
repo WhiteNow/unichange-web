@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Navbar,Nav} from 'react-bootstrap'
 import Request from '../../screens/Request'
+import Convenio from "./../Convenio";
 
 class NavigationNavBar extends Component {
 
@@ -18,7 +19,7 @@ class NavigationNavBar extends Component {
             if (this.state.status === "traslados")
                 return(<div>Traslados</div>)
             if (this.state.status === "convenios")
-                return(<div>Convenios</div>)
+                return(<Convenio />)
         }
         
         return ( 
@@ -36,6 +37,6 @@ class NavigationNavBar extends Component {
             </div>
         </div>)
     }
-};
+}
 
 export default NavigationNavBar;
