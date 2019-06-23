@@ -1,0 +1,51 @@
+.header-div {
+    display: flex;
+
+}
+
+.back-btn {
+    margin-top: 27px;
+    margin-left: 2%;
+    width: 2%;
+    height: 2%;
+}
+
+.back-btn:hover {
+    cursor: pointer;
+}
+
+.header-title {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.content-div {
+    display: flex;
+}
+
+.content-user-info {
+    width: 50%;
+    margin: 3%;
+}
+
+.tb-body-info {
+    margin-left: 20px;
+}
+
+.profile-info-image {
+    align-content: center;
+}
+
+.content-btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.approve-button {
+    border-radius: 3%;
+    margin: 20px;
+    background-color: coral;
+    align-content: center;
+}

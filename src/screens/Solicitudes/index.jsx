@@ -66,18 +66,28 @@ class Solicitudes extends Component {
     let content = () => {
       if (this.state.status === "lista")
         return (
-          <div className="container">
-            <table className="table table-bordered" >
-              <thead className="barra-de-navegación">
-                <tr className="cuadro-text">
-                  {columns}
-                </tr>
-              </thead>
-              <tbody>
-                {data}
-              </tbody>
-            </table>
-          </div>
+          <>
+            <div class="container-1">
+              <div class="text-tabla">
+              <h1 class="titulo-tabla">TODAS LAS SOLICITUDES</h1>
+                </div>
+              <div class="buscador">
+                <input class="typeahead form-control " type="text" placeholder="Buscar...."/>
+              </div>
+            </div>
+            <div className="container">
+              <table className="table table-bordered" >
+                <thead className="barra-de-navegación">
+                  <tr className="cuadro-text">
+                    {columns}
+                  </tr>
+                </thead>
+                <tbody>
+                  {data}
+                </tbody>
+              </table>
+            </div>
+          </>
       );
       if (this.state.status === "detalles")
         return (<DetalleSolicitud/>)
