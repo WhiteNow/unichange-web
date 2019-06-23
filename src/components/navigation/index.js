@@ -24,10 +24,9 @@ class NavigationNavBar extends Component {
         return (<Traslados />)
       if (this.state.status === "convenios")
         return (<Convenios />)
-    }
-
-    return (
-      <div>
+    }   
+        return ( 
+       <div>
         <Navbar bg="light" variant="light">
           <Navbar.Brand>PuriKusi</Navbar.Brand>
           <Nav className="mr-auto">
@@ -39,7 +38,7 @@ class NavigationNavBar extends Component {
         <div>
           {content()}
         </div>
-      </div>)
+      </div>);
   }
 }
 
