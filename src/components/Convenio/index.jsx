@@ -1,45 +1,64 @@
 import React, { Component } from "react";
-import { Form, Row, Button, Col,ListGroup } from "react-bootstrap";
+import { Form, Row, Col,ListGroup } from "react-bootstrap";
 import UniversidadCB from "../UniversidadCB";
 
 class Convenio extends Component {
-  state = {
+  state = {      
+    showRegModal: false,
     cblist: [
       "UPN", 
       "UNC", 
       "UA"
     ],
-    reglist: [
-      "SUNEDU",
-      "SUNEDU1",
-      "SUNEDU2",
-      "SUNEDU3",
+    regList: [
+      {
+        nombre: "SUNEDU",
+        seleccionado: false
+      },
+      {
+        nombre: "SUNEDU DE COLOMBIA",
+        seleccionado: false
+      }
     ]
   };
 
-  componentDidMount() {
+  componentDidMount = () => {
     // populate cblist and reglist
   }
 
+  handleCloseRegModal = () => {
+    this.setState({ showRegModal: false });
+  }
+
+  handleShowRegModal = () => {
+    this.setState({ showRegModal: true });
+  }
+
   render() {
-    let reglist = this.state.reglist.map(r => (<ListGroup.Item>{r}</ListGroup.Item>))
+    let reglist = this.state.regList.map(r => (
+      <ListGroup.Item variant="secondary">
+        {r.nombre}
+      </ListGroup.Item>
+    ))
 
     return (
-      <Form>
-        <Row>
-          <Col>
-            <h1>Universidad Origen</h1>
-            <p> UPC</p>
-            <UniversidadCB list={this.state.cblist} />
-          </Col>
-          <Col>
-            <Button variant="primary">Agregar Reguladores</Button>
-            <ListGroup>
-              {reglist}
-            </ListGroup>
-          </Col>
-        </Row>
-      </Form>
+      <div>
+        <Form>
+          <Row>
+            <Col>
+              <h1>Universidad Origen</h1>
+              <p> UPC</p>
+              <UniversidadCB list={this.state.cblist} />
+            </Col>
+            <Col>
+              <h1>Reguladores</h1>
+              <ListGroup>
+                {reglist}
+              </ListGroup>
+            </Col>
+          </Row>
+        </Form>
+      </div>
     );
   }
 }
