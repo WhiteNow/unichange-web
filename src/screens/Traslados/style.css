@@ -43,8 +43,9 @@
     font-family: 'Bree Serif', serif;
   }
 
-  .data:hover {
-    background-color: burlywood;
+  .hover-row:hover {
+    background-color: #dee4ed;
+    cursor: pointer;
   }
   
   

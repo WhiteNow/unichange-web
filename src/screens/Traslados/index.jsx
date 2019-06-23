@@ -3,6 +3,7 @@ import './style.css';
 
 class Traslados extends Component {
   state = {
+    status: "lista",
     columns: [
       "#ID",
       "Código Alumno",
@@ -31,11 +32,19 @@ class Traslados extends Component {
     ]
   }
 
+  onClickRowHanlder = (e,data) => {
+    this.changeStatus('detalles');
+  }
+
   componentDidMount = () => {
     // populate columns and data (just data)
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(json => console.log(json))
+  }
+
+  changeStatus = (s) => {
+    this.setState({ status: s })
   }
 
   render() {
@@ -45,7 +54,7 @@ class Traslados extends Component {
     ))    
 
     let data = this.state.data.map(d => (
-      <tr key={d.id}>
+      <tr key={d.id} className="hover-row"  onClick={((e) => this.onClickRowHanlder(e, d))}>
         <th scope="row">{d.id}</th>
         <td>{d.codigo}</td>
         <td>{d.destino}</td>
@@ -53,20 +62,27 @@ class Traslados extends Component {
       </tr>
     ))
 
-    return (
-      <div className="container">
-        <table className="table table-bordered" >
-          <thead className="barra-de-navegación">
-            <tr className="cuadro-text">
-              {columns}
-            </tr>
-          </thead>
-          <tbody className="data">
-            {data}
-          </tbody>
-        </table>
-      </div>
-    );
+    let content = () => {
+      if (this.state.status === "lista")
+        return (
+          <div className="container">
+            <table className="table table-bordered" >
+              <thead className="barra-de-navegación">
+                <tr className="cuadro-text">
+                  {columns}
+                </tr>
+              </thead>
+              <tbody>
+                {data}
+              </tbody>
+            </table>
+          </div>
+      );
+      if (this.state.status === "detalles")
+        return (<div>lol</div>)
+    }
+
+    return (<>{content()}</>);
   }
 }
 
