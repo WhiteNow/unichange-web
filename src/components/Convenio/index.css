@@ -1,0 +1,52 @@
+h1 {
+    font-family: 'Bree Serif', serif;
+    margin: 35px 35px 35px 35px;
+
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+p {
+    font-family: 'Bree Serif', serif;
+    font-size: 22px;
+    color: darkred;
+    font-weight: bold;
+    margin: 35px 35px 35px 35px;
+
+}
+
+#btn-syllabus {
+
+    color: #fff;
+    background-color: #e67a20;
+    border-color: #e67a20;
+    margin: 35px 35px 35px;
+}
+
+#btn-agregar {
+    color: #fff;
+    background-color: rgb(220, 53, 69);
+    ;
+    border-color: rgb(220, 53, 69);
+    ;
+
+    margin-top: 107px;
+    margin-left: 232px;
+}
+
+#btn-agregar:hover {
+    color: none;
+}
+
+#btn-syllabus :hover {
+    color: none;
+}
+
+.list-group-item-secondary {
+    margin-top: 35px;
+    margin-right: 35px;
+    margin-left: 35px;
+    margin-bottom: -36px;
+    text-align: left;
+}

@@ -3,7 +3,7 @@ import { Form, Row, Col, ListGroup, Button } from "react-bootstrap";
 import UniversidadCB from "../UniversidadCB";
 import Syllabus from "./../Syllabus/Syllabus";
 import "./index.css";
-class Convenio extends Component {
+class EditarConvenio extends Component {
   state = {
     showRegModal: false,
     cblist: ["UPN", "UNC", "UA"],
@@ -45,6 +45,7 @@ class Convenio extends Component {
         />
 
         <Form>
+          <h1>Editar Convenio</h1>
           <Row>
             <Col>
               <h1>Universidad Origen</h1>
@@ -63,7 +64,7 @@ class Convenio extends Component {
               <h1>Reguladores</h1>
               <ListGroup>{reglist}</ListGroup>
               <Button variant="primary" id="btn-agregar">
-                CREACIÓN CONVENIO
+                GUARDAR MODIFICACIONES
               </Button>
             </Col>
           </Row>
@@ -73,4 +74,4 @@ class Convenio extends Component {
   }
 }
 
-export default Convenio;
+export default EditarConvenio;
