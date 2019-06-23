@@ -1,4 +1,5 @@
 .header-div {
+    font-family: 'Bree Serif', serif;
     display: flex;
 
 }
@@ -15,15 +16,18 @@
 }
 
 .header-title {
+    font-family: 'Bree Serif', serif;
     margin-top: 20px;
     margin-left: 20px;
 }
 
 .content-div {
+    font-family: 'Bree Serif', serif;
     display: flex;
 }
 
 .content-user-info {
+    font-family: 'Bree Serif', serif;
     width: 50%;
     margin: 3%;
 }
@@ -44,8 +48,72 @@
 }
 
 .approve-button {
-    border-radius: 3%;
+    /* color: white; */
+    border-radius: 10px;
+    border: none;
     margin: 20px;
-    background-color: coral;
+    width: 200px;
+    height: 50px;
+    background-color: #E8794C;
     align-content: center;
+    font-family: 'Bree Serif', serif;
 }
+
+.reject-button {
+    color: #E8794C;
+    border-radius: 10px;
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border-width: thin;
+    border-color: #E8794C;
+    align-content: center;
+    font-family: 'Bree Serif', serif;
+}
+
+.reject-button:hover {
+    background: #E8794C;
+    color: black;
+}
+
+.label-info {
+    font-family: 'Bree Serif', serif;
+    margin-left: 3%;
+    margin-top: 4%;
+}
+  
+.container {
+    margin-top: 5%;
+    font-family: 'Bree Serif', serif;
+    font-style: normal;
+    display:flex;
+    justify-content: space-between;
+    border-radius: 5%;
+    /* margin-left: 20px; */
+  
+  }
+  
+  .container1 {
+    margin-top: 3%;
+    /* margin-left: 5%; */
+    font-family: 'Bree Serif', serif;
+    position: center;
+    /* background-color: #E8794C; */
+  }
+  
+  .p-detalle {
+    /* margin-left: 20%; */
+  }
+  tr {
+    text-align: center;
+  }
+
+  thead {
+    background-color: #E8794C; 
+  }
+
+  .college-container {
+      margin: 3%;
+      font-family: 'Bree Serif', serif;
+  }

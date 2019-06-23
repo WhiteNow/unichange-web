@@ -23,6 +23,10 @@ class DetalleTransalado extends Component {
                     <h2 className="header-title">Detalle de la solicitud</h2>
                 </div>
 
+                <div className = "label-info">
+                    <h4>Información personal</h4>
+                </div>
+
                 <div className = "content-div">
                     <div className="content-user-info">
                         <table className = "table table-bordered">
@@ -42,8 +46,8 @@ class DetalleTransalado extends Component {
                     </div>
                     <div className="content-btns">
                         <div> 
-                            <button type="button"  className="approve-button" data-toggle="modal" data-target="#exampleModal">
-                                RECHAZAR
+                            <button type="button"  className="approve-button" >
+                                ACEPTAR
                             </button>
                         </div>                        
                         <div>
@@ -51,6 +55,30 @@ class DetalleTransalado extends Component {
                                 RECHAZAR
                             </button>
                         </div>
+                    </div>
+                </div>
+                
+                <div className="college-container"> 
+                    <div className="col-md-6">
+                        <p>Universidad a la que postula:</p>
+                        <div className="container1">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">UNIVERSIDAD</th>
+                                            <th scope="col">PAÍS</th>
+                                        </tr>
+                                        </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Universidad de Marbella</td>
+                                            <td>República Dominicana</td>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    <p>Nivel de inglés: Intermedio</p>
                     </div>
                 </div>
 
