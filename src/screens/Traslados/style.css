@@ -1,0 +1,46 @@
+.container {
+    margin-top: 5%;
+    font-family: 'Bree Serif', serif;
+    font-style: normal;
+  
+  }
+  
+  .barra-de-navegación {
+    background-color: #E8794C;
+    font-size: 120%;
+  }
+  
+  .table-margen {
+    border-radius: 10%;
+  }
+  
+  .titulo-tabla {
+   font-size:20px; 
+   font-family: 'Bree Serif', serif;
+   margin-left:25%;
+  }
+  
+  .container-1 {
+    display:flex;
+    justify-content: space-between;
+    margin-top:5%;
+  }
+  
+  .buscador {
+    margin-right: 10%;
+    font-family: 'Bree Serif', serif;
+  }
+  .divtest {
+    width: 80%;
+    position: center;
+  }
+  
+  .text-tabla {
+    width: 40%;
+  }
+  
+  .cuadro-text {
+    font-family: 'Bree Serif', serif;
+  }
+  
+  

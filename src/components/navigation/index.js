@@ -1,42 +1,46 @@
-import React, {Component} from 'react';
-import {Navbar,Nav} from 'react-bootstrap'
-import Request from '../../screens/Request'
-import Convenio from "./../Convenio";
+import React, { Component } from 'react';
+import { Navbar, Nav } from 'react-bootstrap'
+
+import Traslados from '../../screens/Traslados'
+import Convenios from '../../screens/Convenios'
+import Solicitudes from '../../screens/Solicitudes'
+
+// import Convenio from "./../Convenio";
 
 class NavigationNavBar extends Component {
 
-    state = {status: "solicitud"}
+  state = { status: "solicitud" }
 
-    changeStatus = (s) => {
-        this.setState({status: s})
+  changeStatus = (s) => {
+    this.setState({ status: s })
+  }
+
+  render() {
+
+    let content = () => {
+      if (this.state.status === "solicitud")
+        return (<Solicitudes />)
+      if (this.state.status === "traslados")
+        return (<Traslados />)
+      if (this.state.status === "convenios")
+        return (<Convenios />)
     }
 
-    render () {  
-        
-        let content = () => {
-            if (this.state.status === "solicitud")
-                return(<Request/>)
-            if (this.state.status === "traslados")
-                return(<div>Traslados</div>)
-            if (this.state.status === "convenios")
-                return(<Convenio />)
-        }
-        
-        return ( 
-        <div>
+    return (
+      <div>
         <Navbar bg="light" variant="light">
-            <Navbar.Brand>PuriKusi</Navbar.Brand>
-            <Nav className="mr-auto">
-            <Nav.Link onClick={() => {this.changeStatus("solicitud")}}>Solicitudes</Nav.Link>
-            <Nav.Link onClick={() => {this.changeStatus("traslados")}}>Traslados</Nav.Link>
-            <Nav.Link onClick={() => {this.changeStatus("convenios")}}>Convenios</Nav.Link>
-            </Nav>
+          <Navbar.Brand>PuriKusi</Navbar.Brand>
+          <Nav className="mr-auto">
+            <Nav.Link onClick={() => { this.changeStatus("solicitud") }}>Solicitudes</Nav.Link>
+            <Nav.Link onClick={() => { this.changeStatus("traslados") }}>Traslados</Nav.Link>
+            <Nav.Link onClick={() => { this.changeStatus("convenios") }}>Convenios</Nav.Link>
+          </Nav>
         </Navbar>
-            <div>
-                {content()}
-            </div>
-        </div>)
-    }
+        <div>
+          {content()}
+        </div>
+      </div>)
+  }
 }
 
 export default NavigationNavBar;
