@@ -39,9 +39,10 @@ class Traslados extends Component {
   }
 
   render() {
+
     let columns = this.state.columns.map((c,k) => (
       <th key={k} scope="col">{c}</th>
-    ))
+    ))    
 
     let data = this.state.data.map(d => (
       <tr key={d.id}>
@@ -60,7 +61,7 @@ class Traslados extends Component {
               {columns}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="data">
             {data}
           </tbody>
         </table>

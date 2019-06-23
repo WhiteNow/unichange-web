@@ -42,5 +42,10 @@
   .cuadro-text {
     font-family: 'Bree Serif', serif;
   }
+
+  .hover-row:hover {
+    background-color: #dee4ed;
+    cursor: pointer;
+  }
   
   

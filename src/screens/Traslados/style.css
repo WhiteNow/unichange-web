@@ -42,5 +42,9 @@
   .cuadro-text {
     font-family: 'Bree Serif', serif;
   }
+
+  .data:hover {
+    background-color: burlywood;
+  }
   
   

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './style.css';
+import DetalleSolicitud from './Detalle';
+
 
 class Solicitudes extends Component {
   state = {
+    status: "lista",
     columns: [
       "#ID",
       "Código Alumno",
@@ -31,11 +34,19 @@ class Solicitudes extends Component {
     ]
   }
 
+  onClickRowHanlder = (e,data) => {
+    this.changeStatus('detalles');
+  }
+
   componentDidMount = () => {
     // populate columns and data (just data)
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(json => console.log(json))
+  }
+
+  changeStatus = (s) => {
+    this.setState({ status: s })
   }
 
   render() {
@@ -44,7 +55,7 @@ class Solicitudes extends Component {
     ))
 
     let data = this.state.data.map(d => (
-      <tr key={d.id}>
+      <tr key={d.id} className="hover-row" onClick={((e) => this.onClickRowHanlder(e, d))}>
         <th scope="row">{d.id}</th>
         <td>{d.codigo}</td>
         <td>{d.destino}</td>
@@ -52,57 +63,29 @@ class Solicitudes extends Component {
       </tr>
     ))
 
-    return (
-      <div className="container">
-        <table className="table table-bordered" >
-          <thead className="barra-de-navegación">
-            <tr className="cuadro-text">
-              {columns}
-            </tr>
-          </thead>
-          <tbody>
-            {data}
-          </tbody>
-        </table>
-      </div>
-    );
+    let content = () => {
+      if (this.state.status === "lista")
+        return (
+          <div className="container">
+            <table className="table table-bordered" >
+              <thead className="barra-de-navegación">
+                <tr className="cuadro-text">
+                  {columns}
+                </tr>
+              </thead>
+              <tbody>
+                {data}
+              </tbody>
+            </table>
+          </div>
+      );
+      if (this.state.status === "detalles")
+        return (<DetalleSolicitud/>)
+    }
+
+    return (<>{content()}</>);
   }
 }
 
 export default Solicitudes;
-
-// export default () => (
-//   <div class="container">
-//     <table class="table table-bordered" >
-//       <thead class="barra-de-navegación">
-//         <tr class="cuadro-text">
-//           <th scope="col">#ID</th>
-//           <th scope="col">Código Alumno</th>
-//           <th scope="col">Destino</th>
-//           <th scope="col">Fecha de Solicitud</th>
-//         </tr>
-//       </thead>
-//       <tbody>
-//         <tr>
-//           <th scope="row">001</th>
-//           <td>Mark</td>
-//           <td>Universidad de Marbella</td>
-//           <td>20/06/19</td>
-//         </tr>
-//         <tr>
-//           <th scope="row">002</th>
-//           <td>Jacob</td>
-//           <td>Universidad de Cádiz (UCA) </td>
-//           <td>21/06/19</td>
-//         </tr>
-//         <tr>
-//           <th scope="row">003</th>
-//           <td>Alirio</td>
-//           <td>Universidad de Sevilla (US)</td>
-//           <td>22/06/19</td>
-//         </tr>
-//       </tbody>
-//     </table>
-//   </div>
-// );
 
