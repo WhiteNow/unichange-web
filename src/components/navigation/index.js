@@ -1,17 +1,41 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Navbar,Nav} from 'react-bootstrap'
+import Request from '../../screens/Request'
 
-const NavigationNavBar = () => {
-    return <div>
-        <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+class NavigationNavBar extends Component {
+
+    state = {status: "solicitud"}
+
+    changeStatus = (s) => {
+        this.setState({status: s})
+    }
+
+    render () {  
+        
+        let content = () => {
+            if (this.state.status === "solicitud")
+                return(<Request/>)
+            if (this.state.status === "traslados")
+                return(<div>Traslados</div>)
+            if (this.state.status === "convenios")
+                return(<div>Convenios</div>)
+        }
+        
+        return ( 
+        <div>
+        <Navbar bg="light" variant="light">
+            <Navbar.Brand>PuriKusi</Navbar.Brand>
             <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link onClick={() => {this.changeStatus("solicitud")}}>Solicitudes</Nav.Link>
+            <Nav.Link onClick={() => {this.changeStatus("traslados")}}>Traslados</Nav.Link>
+            <Nav.Link onClick={() => {this.changeStatus("convenios")}}>Convenios</Nav.Link>
             </Nav>
         </Navbar>
-    </div>
+            <div>
+                {content()}
+            </div>
+        </div>)
+    }
 };
 
 export default NavigationNavBar;

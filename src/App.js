@@ -4,7 +4,7 @@ import imag from './img/Captura.JPG';
 import './App.css';
 import Home from './screens/Home'
 
-console.log(imag)
+
 function App() {
   return (
     <Home/>
